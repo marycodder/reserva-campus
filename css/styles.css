@@ -1,0 +1,353 @@
+/* ==================================================
+   RESERVACAMPUS - ESTILOS GENERALES
+   ================================================== */
+
+:root {
+    --color-vino: #5D223B;
+    --color-rojo: #A60321;
+    --color-celeste: #048ABF;
+    --color-azul: #00375C;
+    --color-oscuro: #201C23;
+
+    --color-blanco: #ffffff;
+    --color-fondo: #f6f7f9;
+    --color-borde: #e2e5e9;
+    --color-texto-secundario: #62666d;
+}
+
+
+/* ==================================================
+   BASE
+   ================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-oscuro);
+    background-color: var(--color-blanco);
+}
+
+section {
+    scroll-margin-top: 75px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-azul);
+}
+
+p {
+    line-height: 1.6;
+}
+
+
+/* ==================================================
+   NAVBAR
+   ================================================== */
+
+.navbar {
+    background-color: var(--color-azul) !important;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+}
+
+.navbar-brand {
+    color: var(--color-blanco) !important;
+    letter-spacing: 0.3px;
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.82) !important;
+    transition: color 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+    color: var(--color-blanco) !important;
+}
+
+.navbar .nav-link:focus {
+    color: var(--color-blanco) !important;
+}
+
+
+/* ==================================================
+   HERO
+   ================================================== */
+
+#inicio {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 55, 92, 0.97),
+            rgba(93, 34, 59, 0.94)
+        ) !important;
+
+    color: var(--color-blanco);
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+}
+
+#inicio h1 {
+    color: var(--color-blanco);
+}
+
+#inicio .lead {
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ==================================================
+   BOTONES
+   ================================================== */
+
+.btn-primary {
+    background-color: var(--color-vino);
+    border-color: var(--color-vino);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #4b1b30;
+    border-color: #4b1b30;
+}
+
+.btn-outline-secondary {
+    color: var(--color-azul);
+    border-color: var(--color-azul);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--color-azul);
+    border-color: var(--color-azul);
+    color: var(--color-blanco);
+}
+
+
+/* ==================================================
+   TÍTULOS DE SECCIÓN
+   ================================================== */
+
+section h2 {
+    font-weight: 700;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    margin: 10px auto 0;
+    background-color: var(--color-celeste);
+    border-radius: 10px;
+}
+
+
+/* ==================================================
+   INDICADORES
+   ================================================== */
+
+#indicadores .card {
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(32, 28, 35, 0.06);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#indicadores .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 20px rgba(32, 28, 35, 0.1);
+}
+
+#indicadores h3 {
+    color: var(--color-vino);
+}
+
+#indicadores .card-text {
+    color: var(--color-texto-secundario);
+}
+
+
+/* ==================================================
+   ESPACIOS Y FILTROS
+   ================================================== */
+
+#espacios {
+    padding-top: 1rem;
+}
+
+#espacios > .card {
+    border: none;
+    border-radius: 12px;
+    background-color: var(--color-fondo);
+    box-shadow: 0 3px 12px rgba(32, 28, 35, 0.05);
+}
+
+.form-label {
+    color: var(--color-oscuro);
+    font-weight: 600;
+}
+
+.form-control,
+.form-select {
+    border-color: var(--color-borde);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--color-celeste);
+    box-shadow: 0 0 0 0.2rem rgba(4, 138, 191, 0.15);
+}
+
+
+/* ==================================================
+   CARDS DE ESPACIOS
+   Estas clases servirán cuando JavaScript cree
+   las tarjetas dinámicamente.
+   ================================================== */
+
+#contenedorEspacios .card {
+    height: 100%;
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(32, 28, 35, 0.06);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#contenedorEspacios .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(32, 28, 35, 0.1);
+}
+
+#contenedorEspacios .card-title {
+    color: var(--color-azul);
+    font-weight: 700;
+}
+
+#contenedorEspacios .card-text {
+    color: var(--color-texto-secundario);
+}
+
+
+/* ==================================================
+   FORMULARIO DE RESERVA
+   ================================================== */
+
+#reservar {
+    background-color: var(--color-fondo) !important;
+}
+
+#formReserva {
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(32, 28, 35, 0.08);
+    padding: 2rem;
+}
+
+
+/* ==================================================
+   TABLA DE RESERVAS
+   ================================================== */
+
+#mis-reservas table {
+    border-color: var(--color-borde);
+}
+
+#mis-reservas thead th {
+    background-color: var(--color-azul);
+    color: var(--color-blanco);
+    border-color: var(--color-azul);
+    font-weight: 600;
+}
+
+#mis-reservas tbody tr:hover {
+    background-color: rgba(4, 138, 191, 0.05);
+}
+
+
+/* ==================================================
+   ESTADOS
+   Para usar después desde JavaScript
+   ================================================== */
+
+.estado-confirmada {
+    background-color: var(--color-azul);
+    color: var(--color-blanco);
+}
+
+.estado-pendiente {
+    background-color: var(--color-vino);
+    color: var(--color-blanco);
+}
+
+.estado-cancelada {
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+}
+
+
+/* ==================================================
+   ALERTAS
+   ================================================== */
+
+.alert-success {
+    background-color: rgba(4, 138, 191, 0.08);
+    border-color: rgba(4, 138, 191, 0.3);
+    color: var(--color-azul);
+}
+
+.alert-danger {
+    background-color: rgba(166, 3, 33, 0.08);
+    border-color: rgba(166, 3, 33, 0.3);
+    color: var(--color-rojo);
+}
+
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+
+footer {
+    background-color: var(--color-oscuro) !important;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* ==================================================
+   RESPONSIVE
+   ================================================== */
+
+@media (max-width: 767px) {
+
+    #inicio {
+        padding-top: 3.5rem !important;
+        padding-bottom: 3.5rem !important;
+    }
+
+    #inicio h1 {
+        font-size: 2rem;
+    }
+
+    #formReserva {
+        padding: 1.3rem;
+    }
+
+    section {
+        scroll-margin-top: 65px;
+    }
+}

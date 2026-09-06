@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reserva Campus</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container">
+
+                <a class="navbar-brand fw-bold" href="#inicio">
+                    ReservaCampus
+                </a>
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menú"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#inicio">
+                                Inicio
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#espacios">
+                                Espacios
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#reservar">
+                                Reservar
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#mis-reservas">
+                                Mis reservas
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HERO / INICIO
+        ========================== -->
+        <section id="inicio" class="py-5 bg-light">
+            <div class="container text-center">
+
+                <h1 class="display-5 fw-bold">
+                    Reserva espacios en tu universidad
+                </h1>
+
+                <p class="lead mt-3">
+                    Consulta salas, laboratorios y espacios de estudio
+                    disponibles de forma rápida y sencilla.
+                </p>
+
+                <a href="#espacios" class="btn btn-primary btn-lg mt-2">
+                    Ver espacios
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             INDICADORES
+        ========================== -->
+        <section id="indicadores" class="container my-5">
+
+            <h2 class="text-center mb-4">
+                Estado del campus
+            </h2>
+
+            <div class="row g-4">
+
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+
+                            <h3
+                                id="totalEspacios"
+                                class="display-6 fw-bold"
+                            >
+                                0
+                            </h3>
+
+                            <p class="card-text">
+                                Espacios registrados
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+
+                            <h3
+                                id="espaciosDisponibles"
+                                class="display-6 fw-bold"
+                            >
+                                0
+                            </h3>
+
+                            <p class="card-text">
+                                Espacios disponibles
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+
+                            <h3
+                                id="reservasActivas"
+                                class="display-6 fw-bold"
+                            >
+                                0
+                            </h3>
+
+                            <p class="card-text">
+                                Reservas activas
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             ESPACIOS Y FILTROS
+        ========================== -->
+        <section id="espacios" class="container my-5">
+
+            <div class="text-center mb-4">
+
+                <h2>
+                    Espacios disponibles
+                </h2>
+
+                <p class="text-muted">
+                    Busca y filtra los espacios según tus necesidades.
+                </p>
+
+            </div>
+
+
+            <!-- FILTROS -->
+            <div class="card mb-4">
+                <div class="card-body">
+
+                    <div class="row g-3">
+
+                        <!-- Buscar -->
+                        <div class="col-12 col-lg-3">
+
+                            <label
+                                for="buscarEspacio"
+                                class="form-label"
+                            >
+                                Buscar
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="buscarEspacio"
+                                placeholder="Ej: Laboratorio INF"
+                            >
+
+                        </div>
+
+
+
+                        <!-- Torre -->
+                        <div class="col-12 col-md-4 col-lg-3">
+
+                            <label
+                                for="filtroTorre"
+                                class="form-label"
+                            >
+                                Torre
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="filtroTorre"
+                            >
+                                <option value="Todas">
+                                    Todas
+                                </option>
+
+                                <option value="A">
+                                    Torre A
+                                </option>
+
+                                <option value="B">
+                                    Torre B
+                                </option>
+
+                                <option value="C">
+                                    Torre C
+                                </option>
+
+                                <option value="D">
+                                    Torre D
+                                </option>
+                            </select>
+
+                        </div>
+
+
+                        <!-- Tipo -->
+                        <div class="col-12 col-md-4 col-lg-3">
+
+                            <label
+                                for="filtroTipo"
+                                class="form-label"
+                            >
+                                Tipo de espacio
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="filtroTipo"
+                            >
+                                <option value="Todos">
+                                    Todos
+                                </option>
+
+                                <option value="Sala de clases">
+                                    Sala de clases
+                                </option>
+
+                                <option value="Laboratorio">
+                                    Laboratorio
+                                </option>
+
+                                <option value="Box de estudio">
+                                    Box de estudio
+                                </option>
+
+                                <option value="Sala de reunión">
+                                    Sala de reunión
+                                </option>
+
+                                <option value="Espacio recreativo">
+                                    Espacio recreativo
+                                </option>
+                            </select>
+
+                        </div>
+
+
+                        <!-- Capacidad -->
+                        <div class="col-12 col-md-4 col-lg-3">
+
+                            <label
+                                for="filtroCapacidad"
+                                class="form-label"
+                            >
+                                Capacidad mínima
+                            </label>
+
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="filtroCapacidad"
+                                min="1"
+                                placeholder="Ej: 10"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mt-3">
+
+                        <button
+                            id="btnLimpiarFiltros"
+                            class="btn btn-outline-secondary"
+                            type="button"
+                        >
+                            Limpiar filtros
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!--
+                JavaScript agregará aquí
+                las tarjetas de espacios
+            -->
+            <div
+                id="contenedorEspacios"
+                class="row g-4"
+            >
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FORMULARIO DE RESERVA
+        ========================== -->
+        <section id="reservar" class="bg-light py-5">
+
+            <div class="container">
+
+                <div class="row justify-content-center">
+
+                    <div class="col-12 col-lg-8">
+
+                        <h2 class="text-center mb-4">
+                            Solicitar una reserva
+                        </h2>
+
+
+                        <form
+                            id="formReserva"
+                            class="card card-body"
+                        >
+
+                            <!-- Espacio -->
+                            <div class="mb-3">
+
+                                <label
+                                    for="reservaEspacio"
+                                    class="form-label"
+                                >
+                                    Espacio
+                                </label>
+
+                                <select
+                                    id="reservaEspacio"
+                                    class="form-select"
+                                    required
+                                >
+                                    <option value="">
+                                        Seleccione un espacio
+                                    </option>
+                                </select>
+
+                            </div>
+
+
+                            <!-- Fecha -->
+                            <div class="mb-3">
+
+                                <label
+                                    for="reservaFecha"
+                                    class="form-label"
+                                >
+                                    Fecha
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="reservaFecha"
+                                    class="form-control"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- Horarios -->
+                            <div class="row">
+
+                                <div class="col-12 col-md-6 mb-3">
+
+                                    <label
+                                        for="horaInicio"
+                                        class="form-label"
+                                    >
+                                        Hora de inicio
+                                    </label>
+
+                                    <input
+                                        type="time"
+                                        id="horaInicio"
+                                        class="form-control"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="col-12 col-md-6 mb-3">
+
+                                    <label
+                                        for="horaFin"
+                                        class="form-label"
+                                    >
+                                        Hora de término
+                                    </label>
+
+                                    <input
+                                        type="time"
+                                        id="horaFin"
+                                        class="form-control"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Nombre -->
+                            <div class="mb-3">
+
+                                <label
+                                    for="nombreSolicitante"
+                                    class="form-label"
+                                >
+                                    Nombre del solicitante
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nombreSolicitante"
+                                    class="form-control"
+                                    placeholder="Nombre y apellido"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- Motivo -->
+                            <div class="mb-3">
+
+                                <label
+                                    for="motivoReserva"
+                                    class="form-label"
+                                >
+                                    Motivo de la reserva
+                                </label>
+
+                                <textarea
+                                    id="motivoReserva"
+                                    class="form-control"
+                                    rows="3"
+                                    placeholder="Describe brevemente el motivo"
+                                    required
+                                ></textarea>
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                            >
+                                Solicitar reserva
+                            </button>
+
+
+                            <!-- Mensajes de JavaScript -->
+                            <div
+                                id="mensajeReserva"
+                                class="mt-3"
+                            >
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MIS RESERVAS
+        ========================== -->
+        <section
+            id="mis-reservas"
+            class="container my-5"
+        >
+
+            <h2 class="text-center mb-4">
+                Mis reservas
+            </h2>
+
+
+            <div class="table-responsive">
+
+                <table class="table table-striped align-middle">
+
+                    <thead>
+
+                        <tr>
+                            <th>Espacio</th>
+                            <th>Fecha</th>
+                            <th>Horario</th>
+                            <th>Solicitante</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <!--
+                        JavaScript generará
+                        las filas aquí
+                    -->
+                    <tbody id="tablaReservas">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="bg-dark text-white py-4">
+
+        <div class="container text-center">
+
+            <p class="mb-0">
+                © Reserva Campus - Equipo de desarrollo web 2026
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+    <!-- JavaScript propio -->
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
