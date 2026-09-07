@@ -43,7 +43,7 @@ const espacios = [
         capacidad: 25,
         tipo: "Laboratorio",
         caracteristicas: ["Equipo de quimica", "Pizarra", "Enchufes"],
-        disponible: false
+        disponible: true
     },
     {
         id: 5,
@@ -63,7 +63,7 @@ const espacios = [
         capacidad: 35,
         tipo: "Quincho recreativo",
         caracteristicas: ["3 mesas con sillas", "Sillas", "Muro de escalar", "Parrilla", "area de barbecue"],
-        disponible: false
+        disponible: true
     }
 ];
  
@@ -431,10 +431,22 @@ tablaReservas.addEventListener("click", (event) => {
     }
  
     reserva.estado = "cancelada";
+
+    const espacio = espacios.find(
+        (espacio) => espacio.id === reserva.espacioId
+    );
+
+    if (espacio) {
+        espacio.disponible = true;
+    }
  
     mostrarReservas();
  
     actualizarIndicadores();
+
+    mostrarEspacios(espacios);
+
+    cargarEspaciosFormulario();
 });
  
  
@@ -480,6 +492,14 @@ formReserva.addEventListener("submit", (event) => {
     };
  
     reservas.push(nuevaReserva);
+
+    const espacioReservado = espacios.find(
+        (espacio) => espacio.id === nuevaReserva.espacioId
+    );
+
+    if (espacioReservado) {
+        espacioReservado.disponible = false;
+    }
  
     contadorReservaId++;
  
@@ -495,6 +515,10 @@ formReserva.addEventListener("submit", (event) => {
     mostrarReservas();
  
     actualizarIndicadores();
+
+    mostrarEspacios(espacios);
+
+    cargarEspaciosFormulario();
 });
  
  
@@ -508,7 +532,8 @@ actualizarIndicadores();
  
 cargarEspaciosFormulario();
  
-mostrarReservas();// ==================================================
+mostrarReservas();
+/* ==================================================
 // RESERVACAMPUS
 // Datos iniciales de espacios universitarios
 // ==================================================
@@ -1018,4 +1043,4 @@ actualizarIndicadores();
  
 cargarEspaciosFormulario();
  
-mostrarReservas();
+mostrarReservas(); */
