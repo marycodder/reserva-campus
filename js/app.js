@@ -37,21 +37,21 @@ const espacios = [
     },
     {
         id: 4,
-        nombre: "Laboratorio de Química Q-202",
+        nombre: "Laboratorio de Quimica Q-202",
         torre: "B",
         ubicacion: "Segundo piso",
         capacidad: 25,
         tipo: "Laboratorio",
-        caracteristicas: ["Equipo de química", "Pizarra", "Enchufes"],
+        caracteristicas: ["Equipo de quimica", "Pizarra", "Enchufes"],
         disponible: false
     },
     {
         id: 5,
-        nombre: "Sala de Reunión VM - 516",
+        nombre: "Sala de Reunion VM - 516",
         torre: "C",
         ubicacion: "Quinto piso",
         capacidad: 15,
-        tipo: "Sala de reunión",
+        tipo: "Sala de reunion",
         caracteristicas: ["Pantalla", "Mesa de reuniones", "Enchufes"],
         disponible: true
     },
@@ -62,7 +62,7 @@ const espacios = [
         ubicacion: "Tercer piso",
         capacidad: 35,
         tipo: "Quincho recreativo",
-        caracteristicas: ["3 mesas con sillas", "Sillas", "Muro de escalar", "Parrilla", "Área de barbecue"],
+        caracteristicas: ["3 mesas con sillas", "Sillas", "Muro de escalar", "Parrilla", "area de barbecue"],
         disponible: false
     }
 ];
@@ -70,8 +70,7 @@ const espacios = [
  
 // ==================================================
 // RESERVAS
-// Aquí se van guardando las reservas que el usuario
-// va creando desde el formulario
+// Aqui se van guardando las reservas que el usuario va creando desde el formulario
 // ==================================================
  
 let reservas = [];
@@ -169,7 +168,7 @@ function mostrarEspacios(lista) {
                     </p>
  
                     <p class="card-text mb-1">
-                        <strong>Ubicación:</strong>
+                        <strong>Ubicacion:</strong>
                         ${espacio.ubicacion}
                     </p>
  
@@ -185,7 +184,7 @@ function mostrarEspacios(lista) {
  
  
                     <h4 class="h6">
-                        Características
+                        Caracteristicas
                     </h4>
  
                     <ul class="mb-4">
@@ -234,7 +233,7 @@ function actualizarIndicadores() {
 }
  
 // ==================================================
-// Aplicar filtros de búsqueda
+// Aplicar filtros de busqueda
 // ==================================================
  
  
@@ -313,7 +312,7 @@ function mostrarReservas() {
         tablaReservas.innerHTML = `
             <tr>
                 <td colspan="6" class="text-center text-muted">
-                    Aún no tienes reservas registradas.
+                    Aun no tienes reservas registradas.
                 </td>
             </tr>
         `;
@@ -448,14 +447,14 @@ formReserva.addEventListener("submit", (event) => {
     event.preventDefault();
     event.stopPropagation();
  
-    // Validación extra: la hora de fin debe ser mayor que la de inicio
+    // Validacion extra: la hora de fin debe ser mayor que la de inicio
     horaFin.setCustomValidity("");
  
     if (horaInicio.value && horaFin.value && horaFin.value <= horaInicio.value) {
-        horaFin.setCustomValidity("La hora de término debe ser mayor a la hora de inicio.");
+        horaFin.setCustomValidity("La hora de termino debe ser mayor a la hora de inicio.");
     }
  
-    // Si el formulario no es válido (campos vacíos o la validación custom de arriba)
+    // Si el formulario no es valido (campos vacios o la validacipn custom de arriba)
     if (!formReserva.checkValidity()) {
  
         formReserva.classList.add("was-validated");
@@ -548,21 +547,21 @@ const espacios = [
     },
     {
         id: 4,
-        nombre: "Laboratorio de Química Q-202",
+        nombre: "Laboratorio de Quimica Q-202",
         torre: "B",
         ubicacion: "Segundo piso",
         capacidad: 25,
         tipo: "Laboratorio",
-        caracteristicas: ["Equipo de química", "Pizarra", "Enchufes"],
+        caracteristicas: ["Equipo de quimica", "Pizarra", "Enchufes"],
         disponible: false
     },
     {
         id: 5,
-        nombre: "Sala de Reunión VM - 516",
+        nombre: "Sala de Reunion VM - 516",
         torre: "C",
         ubicacion: "Quinto piso",
         capacidad: 15,
-        tipo: "Sala de reunión",
+        tipo: "Sala de reunion",
         caracteristicas: ["Pantalla", "Mesa de reuniones", "Enchufes"],
         disponible: true
     },
@@ -581,8 +580,7 @@ const espacios = [
  
 // ==================================================
 // RESERVAS
-// Aquí se van guardando las reservas que el usuario
-// va creando desde el formulario
+// Aqui se van guardando las reservas que el usuario va creando desde el formulario
 // ==================================================
  
 let reservas = [];
@@ -680,7 +678,7 @@ function mostrarEspacios(lista) {
                     </p>
  
                     <p class="card-text mb-1">
-                        <strong>Ubicación:</strong>
+                        <strong>Ubicacion:</strong>
                         ${espacio.ubicacion}
                     </p>
  
@@ -696,7 +694,7 @@ function mostrarEspacios(lista) {
  
  
                     <h4 class="h6">
-                        Características
+                        Caracteristicas
                     </h4>
  
                     <ul class="mb-4">
@@ -745,7 +743,7 @@ function actualizarIndicadores() {
 }
  
 // ==================================================
-// Aplicar filtros de búsqueda
+// Aplicar filtros de busqueda
 // ==================================================
  
  
@@ -824,7 +822,7 @@ function mostrarReservas() {
         tablaReservas.innerHTML = `
             <tr>
                 <td colspan="6" class="text-center text-muted">
-                    Aún no tienes reservas registradas.
+                    Aun no tienes reservas registradas.
                 </td>
             </tr>
         `;
@@ -959,14 +957,14 @@ formReserva.addEventListener("submit", (event) => {
     event.preventDefault();
     event.stopPropagation();
  
-    // Validación extra: la hora de fin debe ser mayor que la de inicio
+    // Validacin extra: la hora de fin debe ser mayor que la de inicio
     horaFin.setCustomValidity("");
  
     if (horaInicio.value && horaFin.value && horaFin.value <= horaInicio.value) {
-        horaFin.setCustomValidity("La hora de término debe ser mayor a la hora de inicio.");
+        horaFin.setCustomValidity("La hora de termino debe ser mayor a la hora de inicio.");
     }
  
-    // Si el formulario no es válido (campos vacíos o la validación custom de arriba)
+    // Si el formulario no es valido (campos vacios o la validacion custom de arriba)
     if (!formReserva.checkValidity()) {
  
         formReserva.classList.add("was-validated");
