@@ -55,28 +55,62 @@ p {
 
 .navbar {
     background-color: var(--color-azul) !important;
-    padding-top: 0.9rem;
-    padding-bottom: 0.9rem;
+    padding: 0.65rem 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
 .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+
     color: var(--color-blanco) !important;
+
+    font-weight: 700;
     letter-spacing: 0.3px;
 }
 
+
+.navbar-logo {
+    width: 52px;
+    height: 52px;
+
+    object-fit: contain;
+
+    background-color: white;
+
+    border-radius: 8px;
+
+    padding: 3px;
+}
+
+
 .navbar .nav-link {
-    color: rgba(255, 255, 255, 0.82) !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+
+    font-weight: 500;
+
+    margin-left: 0.5rem;
+
     transition: color 0.2s ease;
 }
 
-.navbar .nav-link:hover {
-    color: var(--color-blanco) !important;
-}
 
+.navbar .nav-link:hover,
 .navbar .nav-link:focus {
     color: var(--color-blanco) !important;
 }
-
 
 /* ==================================================
    HERO
@@ -334,6 +368,25 @@ footer {
 
 @media (max-width: 767px) {
 
+.logo-container {
+    width: 46px;
+    height: 46px;
+    overflow: hidden;
+    background-color: rgb(54, 51, 51);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.navbar-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+        .navbar-brand {
+        font-size: 1rem;
+    }
+
     #inicio {
         padding-top: 3.5rem !important;
         padding-bottom: 3.5rem !important;
@@ -350,4 +403,5 @@ footer {
     section {
         scroll-margin-top: 65px;
     }
+
 }
