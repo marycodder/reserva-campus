@@ -34,9 +34,6 @@ Actualmente el proyecto contempla:
 - Indicadores de espacios registrados y disponibles.
 - Selección de un espacio para realizar una reserva.
 - Diseño adaptable a computadores, tablets y teléfonos.
-
-### En desarrollo
-
 - Creación de reservas.
 - Validación de fecha y horario.
 - Detección de conflictos entre reservas.
