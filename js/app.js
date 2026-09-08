@@ -530,8 +530,19 @@ formReserva.addEventListener("submit", (event) => {
     if (horaInicio.value && horaFin.value && horaFin.value <= horaInicio.value) {
         horaFin.setCustomValidity("La hora de termino debe ser mayor a la hora de inicio.");
     }
+
+    // Validacion extra: el nombre solo debe contener letras, ñ y acentos
+    nombreSolicitante.setCustomValidity("");
+
+    const nombreValido = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+
+    if (!nombreValido.test(nombreSolicitante.value.trim())) {
+        nombreSolicitante.setCustomValidity(
+            "El nombre solo puede contener letras, espacios, ñ y acentos."
+        );
+    }
  
-    // Si el formulario no es valido (campos vacios o la validacipn custom de arriba)
+    // Si el formulario no es valido (campos vacios o la validacion custom de arriba)
     if (!formReserva.checkValidity()) {
  
         formReserva.classList.add("was-validated");
