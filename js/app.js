@@ -541,6 +541,21 @@ formReserva.addEventListener("submit", (event) => {
             "El nombre solo puede contener letras, espacios, ñ y acentos."
         );
     }
+
+    // Validacion extra: la fecha debe ser desde septiembre de 2026
+    reservaFecha.setCustomValidity("");
+
+    const fechaMinima = new Date("2026-09-07");
+    const fechaSeleccionada = new Date(reservaFecha.value);
+
+
+    if (reservaFecha.value && fechaSeleccionada < fechaMinima) {
+
+        reservaFecha.setCustomValidity(
+            "La fecha de reserva debe ser desde septiembre de 2026."
+        );
+
+    }
  
     // Si el formulario no es valido (campos vacios o la validacion custom de arriba)
     if (!formReserva.checkValidity()) {
