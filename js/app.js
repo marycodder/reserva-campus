@@ -148,19 +148,14 @@ let contadorReservaId = 1;
 // ==================================================
  
 const contenedorEspacios = document.querySelector("#contenedorEspacios");
- 
 const totalEspacios = document.querySelector("#totalEspacios");
- 
 const espaciosDisponibles = document.querySelector("#espaciosDisponibles");
- 
 const reservasActivas = document.querySelector("#reservasActivas");
- 
 const buscarEspacio = document.querySelector("#buscarEspacio");
 const filtroTorre = document.querySelector("#filtroTorre");
 const filtroTipo = document.querySelector("#filtroTipo");
 const filtroCapacidad = document.querySelector("#filtroCapacidad");
 const btnLimpiarFiltros = document.querySelector("#btnLimpiarFiltros");
- 
 const formReserva = document.querySelector("#formReserva");
 const reservaEspacio = document.querySelector("#reservaEspacio");
 const reservaFecha = document.querySelector("#reservaFecha");
@@ -169,7 +164,6 @@ const horaFin = document.querySelector("#horaFin");
 const nombreSolicitante = document.querySelector("#nombreSolicitante");
 const motivoReserva = document.querySelector("#motivoReserva");
 const mensajeReserva = document.querySelector("#mensajeReserva");
- 
 const tablaReservas = document.querySelector("#tablaReservas");
  
 // ==================================================
@@ -431,7 +425,6 @@ filtroTorre.addEventListener("change", aplicarFiltros);
 filtroTipo.addEventListener("change", aplicarFiltros);
  
 filtroCapacidad.addEventListener("input", aplicarFiltros);
- 
  
 // ==================================================
 // LIMPIAR LOS FILTROS
