@@ -1,5 +1,4 @@
 // ==================================================
-// RESERVACAMPUS
 // Datos iniciales de espacios universitarios
 // ==================================================
  
@@ -64,7 +63,73 @@ const espacios = [
         tipo: "Quincho recreativo",
         caracteristicas: ["3 mesas con sillas", "Sillas", "Muro de escalar", "Parrilla", "area de barbecue"],
         disponible: true
-    }
+    },
+    {
+        id: 7,
+        nombre: "Auditorio Rojo",
+        torre: "A",
+        ubicacion: "Primer piso",
+        capacidad: 120,
+        tipo: "Auditorio",
+        caracteristicas: ["Proyector", "Sistema de audio", "Micrófonos", "Butacas"],
+        disponible: true
+    },
+
+        {
+        id: 8,
+        nombre: "Laboratorio de Computación INF-210",
+        torre: "B",
+        ubicacion: "Segundo piso",
+        capacidad: 35,
+        tipo: "Laboratorio",
+        caracteristicas: ["35 computadores", "Proyector", "Internet", "Aire acondicionado"],
+        disponible: true
+    },
+
+        {
+        id: 9,
+        nombre: "Sala de Innovación y Proyectos",
+        torre: "A",
+        ubicacion: "Cuarto piso",
+        capacidad: 25,
+        tipo: "Sala de reunión",
+        caracteristicas: ["Pizarra digital", "Mesa colaborativa", "Pantalla"],
+        disponible: true
+    },
+
+
+    {
+        id: 10,
+        nombre: "Laboratorio Electrónica E-105",
+        torre: "C",
+        ubicacion: "Primer piso",
+        capacidad: 20,
+        tipo: "Laboratorio",
+        caracteristicas: ["Mesones de trabajo", "Instrumentos electrónicos", "Enchufes"],
+        disponible: true
+    },
+
+        {
+        id: 11,
+        nombre: "Espacio Cowork Estudiantil",
+        torre: "D",
+        ubicacion: "Primer piso",
+        capacidad: 30,
+        tipo: "Cowork",
+        caracteristicas: ["Mesas compartidas", "Internet", "Enchufes", "Zona de descanso"],
+        disponible: true
+    },
+
+        {
+        id: 12,
+        nombre: "Sala de Innovación y Proyectos",
+        torre: "A",
+        ubicacion: "Cuarto piso",
+        capacidad: 25,
+        tipo: "Sala de reunión",
+        caracteristicas: ["Pizarra digital", "Mesa colaborativa", "Pantalla"],
+        disponible: true
+    },
 ];
  
  
