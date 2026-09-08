@@ -431,10 +431,22 @@ tablaReservas.addEventListener("click", (event) => {
     }
  
     reserva.estado = "cancelada";
+
+    const espacio = espacios.find(
+        (espacio) => espacio.id === reserva.espacioId
+    );
+
+    if (espacio) {
+        espacio.disponible = true;
+    }
  
     mostrarReservas();
  
     actualizarIndicadores();
+
+    mostrarEspacios(espacios);
+
+    cargarEspaciosFormulario();
 });
  
  
@@ -480,6 +492,14 @@ formReserva.addEventListener("submit", (event) => {
     };
  
     reservas.push(nuevaReserva);
+
+    const espacioReservado = espacios.find(
+        (espacio) => espacio.id === nuevaReserva.espacioId
+    );
+
+    if (espacioReservado) {
+        espacioReservado.disponible = false;
+    }
  
     contadorReservaId++;
  
@@ -495,6 +515,10 @@ formReserva.addEventListener("submit", (event) => {
     mostrarReservas();
  
     actualizarIndicadores();
+
+    mostrarEspacios(espacios);
+
+    cargarEspaciosFormulario();
 });
  
  
